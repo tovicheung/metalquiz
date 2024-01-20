@@ -1,0 +1,37 @@
+/* --- Tags --- */
+
+
+h1 {
+    margin: 0;
+    font-size: 200px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 50px;
+}
+
+
+/* --- Areas --- */
+
+
+.container {
+    width: 70%;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* --- Unused - Footer --- */
+
+/*
+.footer {
+    left: 0px;
+}
+
+.social-links {
+    text-align: right;
+}
+*/
