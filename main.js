@@ -10,15 +10,6 @@ class Metal {
 
 const metals = [];
 
-fetch("./data.json")
-    .then((resp) => resp.json())
-    .then((json) => {
-        for ([rr, inner] of Object.entries(json)) {
-            [n, symbol] = rr.split(" ");
-            metals.push(new Metal(symbol, n, inner));
-        }
-    })
-
 // --- Utils ---
 
 
@@ -332,9 +323,16 @@ function load_settings() {
 // --- Onload ---
 
 
-window.onload = () => {
-    close_settings();
-    close_session_finished(); // new question is generated here!
-    // new_question();
-    settings_uniques.max = metals.length.toString();
-};
+
+fetch("./data.json")
+    .then((resp) => resp.json())
+    .then((json) => {
+        for ([rr, inner] of Object.entries(json)) {
+            [n, symbol] = rr.split(" ");
+            metals.push(new Metal(symbol, n, inner));
+        }
+        close_settings();
+        close_session_finished(); // new question is generated here!
+        // new_question();
+        settings_uniques.max = metals.length.toString();
+    })
